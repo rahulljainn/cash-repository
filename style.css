@@ -1,0 +1,57 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+.page{
+    background-color: rgba(78, 177, 234, 0.564);
+    text-align: center;
+}
+.heading-2{
+    font-style: oblique;
+    font-size: 4rem;
+    text-decoration: underline;
+    margin-bottom:none;
+}
+.described{
+    font-size: 2rem;
+    margin: 0%;
+}
+.heading-3{
+    font-size:x-large;
+    font-weight: bold;
+    padding-top: 1rem;
+
+}
+#billamt{
+    height: 25px;
+    width: 15rem;
+    margin: auto;
+}
+#givencash{
+    height: 25px;
+    width: 15rem;
+    margin: auto;
+    
+}
+#buttoncheck{
+    height: 25px;
+    width: 5rem;
+    margin: auto;
+    margin-top: 1rem;
+    font-weight:bold;
+}
+
+.heading-4{
+    font-size:2rem;
+    padding-top: 2rem;
+}
+.table-changes{
+    padding: 1rem 20rem;
+    
+    
+}
+.returnnotes{
+    padding-bottom: 1rem;
+    
+}
