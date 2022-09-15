@@ -1,18 +1,19 @@
 const billAmount=document.querySelector("#billamt");
-const cashGviven=document.querySelector("#givencash");
+const cashGiven=document.querySelector("#givencash");
 const checkButton=document.querySelector("#buttoncheck");
 const message=document.querySelector("#errormessage");
 const noOfnotes=document.querySelectorAll(".no-of-notes");
 
-const availableNotes=[2000, 500, 100, 50, 10, 1 ];
+const availableNotes=[2000, 500, 100, 50, 20, 10, 5, 1 ];
 
  checkButton.addEventListener("click" ,function validateBillandCashAmount(){
      hidemessage();
     if(billAmount.value > 0){
-        if (cashGviven.value>=billAmount.value){
-            const amountToBereturned=cashGviven.value-billAmount.value;
+        if (cashGiven.value>=billAmount.value){
+            const amountToBereturned=cashGiven.value-billAmount.value;
             calculatechange(amountToBereturned);
-        }else{
+        }
+        else if(cashGiven.value<billAmount.value){
             popMessage("the amount you paid is less please recheck it");
         }
         }else{ 
