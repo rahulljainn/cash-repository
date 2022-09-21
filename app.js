@@ -14,7 +14,10 @@ const availableNotes=[2000, 500, 100, 50, 20, 10, 5, 1 ];
             calculatechange(amountToBereturned);
         }
         else if(cashGiven.value<billAmount.value){
+           refresh();
             popMessage("the amount you paid is less please recheck it");
+           
+             
         }
         }else{ 
             popMessage("The  Bill amount is not valid");
@@ -35,6 +38,8 @@ const availableNotes=[2000, 500, 100, 50, 20, 10, 5, 1 ];
         message.style.display="block";
         message.innerText=msg;
     }
-   
+function refresh(){
+    noOfnotes.innerText=null;
+}
 
 
