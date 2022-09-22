@@ -8,24 +8,26 @@ const availableNotes=[2000, 500, 100, 50, 20, 10, 5, 1 ];
 
  checkButton.addEventListener("click" ,function validateBillandCashAmount(){
     hidemessage();
-        if(billAmount.value > 0){
-            if (cashGiven.value>billAmount.value){
-                const amountToBereturned=cashGiven.value-billAmount.value;
+    const amount=Number(billAmount.value);
+    const cash=Number(cashGiven.value);
+        if(amount > 0){
+            if (cash > amount){
+                const amountToBereturned=cash-amount;
                 calculatechange(amountToBereturned);
+            }else if(cash==amount){
+                popMessage("no need to return change")
             }
-            else if(cashGiven.value<billAmount.value){
-               popMessage("the amount you paid is less please recheck it");
-               }
-            else if(cashGiven.value == billAmount.value){
-                popMessage("no need to return money")
-            }}else{
+            else {
+                popMessage("the amount you paid is less please recheck it");
+                }
+            }else{
                 popMessage("invalid amount")
             }
     });
     function calculatechange(amountToBereturned) {
         for (let i=0; i< availableNotes.length; i++) {
             const numberOfNotes= Math.trunc(amountToBereturned / availableNotes[i]);
-            amountToBereturned %= availableNotes[i];
+            amountToBereturned = amountToBereturned % availableNotes[i];
             noOfnotes[i].innerText=numberOfNotes;
         }
     }
