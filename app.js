@@ -19,6 +19,7 @@ const availableNotes=[2000, 500, 100, 50, 20, 10, 5, 1 ];
             }
             else {
                 popMessage("the amount you paid is less please recheck it");
+                noOfnotes.innerText=0;
                 }
             }else{
                 popMessage("invalid amount")
@@ -37,4 +38,7 @@ const availableNotes=[2000, 500, 100, 50, 20, 10, 5, 1 ];
     function popMessage(msg){
         message.style.display="block";
         message.innerText=msg;
+        noOfnotes.forEach((cell) =>{
+            cell.innerHTML="";
+        });
     }
